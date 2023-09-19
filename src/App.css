@@ -1,38 +1,220 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-header{
+    background: hsla(276, 39%, 57%, 1);
+    background: linear-gradient(360deg, hsla(276, 39%, 57%, 1) 0%, hsla(276, 74%, 55%, 1) 21%, hsla(237, 100%, 75%, 1) 89%, hsla(231, 100%, 78%, 1) 100%, hsla(210, 29%, 77%, 1) 100%);
+    background: -moz-linear-gradient(360deg, hsla(276, 39%, 57%, 1) 0%, hsla(276, 74%, 55%, 1) 21%, hsla(237, 100%, 75%, 1) 89%, hsla(231, 100%, 78%, 1) 100%, hsla(210, 29%, 77%, 1) 100%);
+    background: -webkit-linear-gradient(360deg, hsla(276, 39%, 57%, 1) 0%, hsla(276, 74%, 55%, 1) 21%, hsla(237, 100%, 75%, 1) 89%, hsla(231, 100%, 78%, 1) 100%, hsla(210, 29%, 77%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#9966BC", endColorstr="#9E36E1", GradientType=1 ); 
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(210, 205, 239);
+  font-family: 'Orbitron', sans-serif;
+}
+#title{
+  font-size: 80px;
+}
+.logo{
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 765px;
+  top: 0px; 
+  animation: slide-down 1s ease-in-out;
+  background-image: url(./imgs/astronaut-animate.svg);
+  background-size: 100%;
+}
+.buttonstart{
+  top: 70%;
+  left: 700px;
+  position: absolute;
+  border: 0;
+  border-radius: 1em;
+  padding: 2px;
+  width: 100px;
+}
+.buttonstart:hover{
+  background-color: rgb(217, 176, 255);
+}
+.openroutes {
+  top: 70%;
+  left: 100px;
+  position: absolute;
+  margin-top: 1rem;
+  display: flex;
 }
 
-.App-link {
-  color: #61dafb;
+.openroutes a {
+  text-decoration: none;
+  color: rgb(240, 217, 240);
+  padding: 1rem 4rem;
+  border: 1px solid #6362623b;
+  font-family: 'Orbitron', sans-serif;
+  min-width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s ease-in-out;
+
+ }
+ a:hover {
+  background-color: rgba(173, 176, 255, 0.958);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+@keyframes slide-down{
+  0% { opacity: 0; -webkit-transform: translateY(-100%); }   
+  100% { opacity: 1; -webkit-transform: translateY(0); }
 }
+
+.login{
+  align-items: center;
+  position: absolute;
+}
+.viewlogin{
+  background-color: rgb(144, 150, 156);
+  height: 500px;
+  width: 600px;
+  animation: slide-down 0.5s ease-in-out;
+  border-radius: 2px;
+  position: absolute;
+  top: 150px;
+  left: 475px;
+}
+.viewcadastro{
+  background-color: rgba(73, 84, 93, 0.572);
+  height: 500px;
+  width: 600px;
+  animation: slide-down 1s ease-in-out;
+  border-radius: 2px;
+  position: absolute;
+  top: 150px;
+  left: 475px;
+}
+
+h2{
+  top: 20px;
+  font-size: 40px;
+  left: 710px;
+  position: absolute;
+  animation: slide-down 2.80s ease-in-out;
+
+}
+h3{
+  top: 20px;
+  font-size: 40px;
+  left: 683px;
+  position: absolute;
+  animation: slide-down 1.5s ease-in-out;
+
+}
+.usuario{
+  left: 185px;
+  position: absolute;
+  top: 120px;
+  animation: slide-down 1s ease-in-out;
+}
+
+.senha{
+  position: absolute;
+  left: 185px;
+  margin-left: 5px;
+  top: 150px;
+  animation: slide-down 1s ease-in-out;
+
+}
+.checkpsw{
+  position: absolute;
+  left: 185px;
+  margin-left: 5px;
+  top: 180px;
+
+  animation: slide-down 1s ease-in-out;
+}
+.checkpsw input{
+  margin-left: 11px;
+}
+input{
+  border-radius: 1em;
+  border: none;
+  animation: slide-down 1s ease-in-out;
+  
+}
+.senha input{
+  margin-left: 13px;
+}
+.usuario input{
+  margin-left: 3px;
+}
+#submit{
+  position: absolute;
+  top: 280px;
+  left: 305px;
+  animation: slide-down 1s ease-in-out;
+}
+#create{
+  position: absolute;
+  top: 300px;
+  left: 250px;
+  animation: slide-down 1s ease-in-out;
+  width: 100px;
+  height: 50px;
+  border-radius:4%;
+  border: none;
+  color: rgb(210, 205, 239);
+  background-color: rgba(92, 160, 152, 0.196);
+}
+#create:hover{
+  background-color: #930e834c;
+}
+
+@media (max-width: 1000px) {
+  #title{
+    position: absolute;
+    font-size: 55px;
+  }
+  #title::before{
+    position: absolute;
+    top: 10%;
+  }
+  .buttonstart{
+    position: absolute;
+    left: 40%;
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
