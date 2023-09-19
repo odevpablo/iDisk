@@ -2,8 +2,8 @@ import React from "react";
 import { Route, BrowserRouter, Routes } from "react-router-dom"; // Observe que estamos importando 'Routes' aqui
 
 import Home from "./home";
-import Login from "./rotas/login";
-import Cadastro from "./rotas/cadastro";
+import Login from "./routes/login";
+import Cadastro from "./routes/cadastro";
 
 const AppRoutes = () => {
   return (
