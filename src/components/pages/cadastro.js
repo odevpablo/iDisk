@@ -1,21 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, Route } from 'react-router-dom';
 
 const Cadastro = () => {
+    const [usuario, setUsuario] = useState("");
+
+    
     return (
         <div className='cad'>
-            <h3>Cadastro</h3>
+            <h3>Criar Usuário</h3>
             <form className='viewcadastro' >
-                <div className='usuario'>
+                <div className='createusuario'>
                 <label id='usuario' htmlFor="usuario">Usuário:</label>
                 <input
                 type="usuario"
                 id="usuario"
-           
                 required
                 />
             </div>
             <div>
-                <div className='senha'>
+                <div className='rgsenha'>
                 <label htmlFor="password">Senha:</label>
                 <input
                 type="password"
@@ -35,6 +38,8 @@ const Cadastro = () => {
             <button id="create"type="submit">
             <span>CADASTRAR</span>
             </button>
+            <Link id='rdclg'to="/login" target="">Já sou usuário</Link>
+
             </form>
         </div>        
     );
