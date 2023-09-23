@@ -71,6 +71,14 @@
   0% { opacity: 0; -webkit-transform: translateY(-100%); }   
   100% { opacity: 1; -webkit-transform: translateY(0); }
 }
+@keyframes slide-top {
+  0% {
+    transform: translateY(100%); /* Inicia fora da tela, abaixo */
+  }
+  100% {
+    transform: translateY(0); /* Desliza para o topo */
+  }
+}
 
 .login{
   align-items: center;
@@ -204,17 +212,21 @@ input{
 
 @media (max-width: 1000px) {
   #title{
-    position: absolute;
     font-size: 55px;
+    left: 80%;
+    
   }
-  #title::before{
-    position: absolute;
-    top: 10%;
+  .logo{
+    top: 35%;
+    left: 50%;
+    background-repeat: no-repeat;
   }
   .buttonstart{
     position: absolute;
-    left: 40%;
+ 
   }
+  .openroutes a {
+    fontSize: '5vw'  }
   
 }
 

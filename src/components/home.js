@@ -7,12 +7,13 @@ import { Link, Route } from 'react-router-dom';
 const Home = () =>{
 
 
-    const [mostrarBotao, setMostrarBotao] = useState(true); // Estado para controlar a exibição do botão
-    const [mostrarDiv, setMostrarDiv] = useState(false); // Estado para controlar a exibição da div
+    const [mostrarBotao, setMostrarBotao] = useState(true);
+    const [mostrarDiv, setMostrarDiv] = useState(false); 
+
 
     const moverParaEsquerda = () => {
-        setMostrarBotao(false); // Oculta o botão
-        setMostrarDiv(true); // Mostra a div
+        setMostrarBotao(false); 
+        setMostrarDiv(true); 
     };
 
     return (
@@ -38,8 +39,8 @@ const Home = () =>{
             transition: 'left 0.5s ease-in-out', 
             position: 'relative',
             left: mostrarDiv ? '-100%' : '0',
-                        
-          }}        
+            fontSize: '5vw',
+          }}         
           >IDISK
           <br/>
           INOVATION
