@@ -223,10 +223,8 @@ input{
   }
   .buttonstart{
     position: absolute;
- 
+    left: 40%;
   }
-  .openroutes a {
-    fontSize: '5vw'  }
   
 }
 
