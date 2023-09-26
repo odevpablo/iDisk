@@ -12,6 +12,7 @@ const AppRoutes = () => {
         <Route element={<Home />} path="/" exact />
         <Route element={<Cadastro />} path="/cadastro" />
         <Route element={<Login />} path="/login" />
+
       </Routes>
     </BrowserRouter>
   );

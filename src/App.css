@@ -210,7 +210,7 @@ input{
   left: 220px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1500px) {
   #title{
     font-size: 55px;
     left: 80%;
@@ -225,6 +225,55 @@ input{
     position: absolute;
     left: 40%;
   }
+  h2{
+    left: 45%;
+  }
+
+  .viewlogin{
+    width: 90%;
+    height: 80vh;
+    left: 5%;
+  }
+  .usuario{
+    font-size: 45px;
+    top: 35%;
+  }
+  .senha{
+    font-size: 45px;
+    top: 40%;
+  }
+  #submit{
+    font-size: 45px;
+     top: 50%;
+     left: 35%;
+     width: 35%;
+    }
+
+  button{
+   
+  }
+  
+}
+@media(max-width: 500px) {
+  .viewlogin{
+    border-radius: 5px;
+  }
+  h2{
+    left: 40%;
+  }
+  .usuario{
+    left: 20%;
+    font-size: 20px;
+  }
+  .senha{
+    left: 20%;
+    font-size: 20px;
+   
+  }
+  #submit{
+    left: 35%;
+    font-size: 20px;
+    }
   
 }
 
