@@ -46,6 +46,7 @@ const Home = () =>{
           INOVATION
         </h1>
         </div>
+
     )
 }
 
