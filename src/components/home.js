@@ -29,8 +29,8 @@ const Home = () =>{
         <div className='view'>
           <div className='logo'></div>
           <div className="openroutes">
-          <Link className='link' to="/cadastro" target="">Cadastrar Usuario</Link>
-          <Link to="/Login" target="">Já sou usuário</Link>
+          <Link className='link' to="/cadastro" target="" id='cad'>Cadastrar Usuario</Link>
+          <Link to="/Login" target="" id='lg'>Já sou usuário</Link>
           </div>
         </div>
       )}

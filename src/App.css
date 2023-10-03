@@ -217,6 +217,7 @@ input{
     
   }
   .logo{
+    height: 20vh;
     top: 35%;
     left: 50%;
     background-repeat: no-repeat;
@@ -225,11 +226,32 @@ input{
     position: absolute;
     left: 40%;
   }
+  .openroutes{
+    left: 100px;
+  }
+  #cad{
+    position: absolute;
+
+  }
+  #lg{
+    top: 100px;
+    position: absolute;
+  }
   h2{
     left: 45%;
   }
+  h3{
+    left: 20%;
+  }
 
   .viewlogin{
+    border-radius: 5px;
+    width: 90%;
+    height: 80vh;
+    left: 5%;
+  }
+  .viewcadastro{
+    border-radius: 5px;
     width: 90%;
     height: 80vh;
     left: 5%;
@@ -256,7 +278,11 @@ input{
 }
 @media(max-width: 500px) {
   .viewlogin{
+    top: 120px;
     border-radius: 5px;
+  }
+  .viewcadastro{
+    top: 120px;
   }
   h2{
     left: 40%;
