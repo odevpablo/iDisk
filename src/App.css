@@ -104,6 +104,24 @@
   top: 150px;
   left: 475px;
 }
+.viewcadastro form{
+  position: absolute;
+  top: 150px;
+  height: 30vh;  
+}
+
+.viewcadastro label{
+  top: 25%;
+  margin-left: 190px;
+}
+#enviar{
+  margin-top: 20px;
+  position: absolute;
+  left: 305px;
+  
+
+}
+
 
 h2{
   top: 20px;
@@ -256,6 +274,7 @@ input{
     height: 80vh;
     left: 5%;
   }
+  
   .usuario{
     font-size: 45px;
     top: 35%;
@@ -270,10 +289,8 @@ input{
      left: 35%;
      width: 35%;
     }
+  
 
-  button{
-   
-  }
   
 }
 @media(max-width: 500px) {
@@ -300,7 +317,13 @@ input{
     left: 35%;
     font-size: 20px;
     }
-  
+    
+   .viewcadastro label{
+    margin-left: 80px;
+   } 
+  #enviar{
+    left: 150px;
+  }
 }
 
 

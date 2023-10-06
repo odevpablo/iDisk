@@ -3,34 +3,64 @@ import React from "react";
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    this.state = { 
+      username: "",
+      user:"",
+      password: "" 
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   }
 
   handleSubmit(event) {
-    alert("Um nome foi enviado: " + this.state.value);
+    alert("Nome: " + this.state.username +
+    "\nUser: " +
+    this.state.user +
+    "\nSenha: " + this.state.password );
     event.preventDefault();
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form id="cadastro" onSubmit={this.handleSubmit}>
           <label>
             Nome:
             <input
               type="text"
-              value={this.state.value}
+              name="username"
+              value={this.state.username}
               onChange={this.handleChange}
             />
           </label>
-          <input type="submit" value="Enviar" />
+          <br/>
+          <label>
+            User:
+          <input
+              type="text"
+              name="user"
+              value={this.state.user}
+              onChange={this.handleChange}
+            />
+          </label>
+          <br />
+          <label>
+            Senha:
+            <input
+              type="password"
+              name="password"
+              value={this.state.password}
+              onChange={this.handleChange}
+            />
+          </label>
+          <br />
+          <input type="submit" id="enviar" value="Enviar" />
         </form>
       </div>
     );
