@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { MdOutlineChevronRight } from "react-icons/md";
+import { FcInfo } from "react-icons/fc";
+import IconWithDiv from './info';
+
+
 import { Link, Route } from 'react-router-dom';
-
-
 
 const Home = () =>{
 
@@ -27,13 +29,17 @@ const Home = () =>{
         )}
          {mostrarDiv && (
         <div className='view'>
+          <info/>
           <div className='logo'></div>
           <div className="openroutes">
           <Link className='link' to="/cadastro" target="" id='cad'>Cadastrar Usuario</Link>
           <Link to="/Login" target="" id='lg'>Já sou usuário</Link>
           </div>
         </div>
-      )}
+      )} 
+      <div className='info'>     
+      <IconWithDiv/>
+      </div>
         <h1 id='title'
          style={{
             transition: 'left 0.5s ease-in-out', 
