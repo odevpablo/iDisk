@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Route } from 'react-router-dom';
-import NameForm from './test'; // Use o caminho correto para o arquivo
+import NameForm from './form'; 
 const Cadastro = () => {
     const [usuario, setUsuario] = useState("");
 
