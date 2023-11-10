@@ -1,46 +1,46 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import Cadastro from './cadastro.js'; // Importe o componente de cadastro
 
 const Login = () => {
-    const [usuario, setUsuario] = useState(''); // Estado para o campo de e-mail
-    const [password, setPassword] = useState(''); // Estado para o campo de senha
+  const [usuario, setUsuario] = useState('');
+  const [password, setPassword] = useState('');
+  const [showCadastro, setShowCadastro] = useState(false); // Adicione um estado para controlar a exibição do formulário de cadastro
 
-    const usuarioChange = (event) => {
-        setUsuario(event.target.value); // Atualiza o estado do e-mail com o valor do campo
-    };
+  const usuarioChange = (event) => {
+    setUsuario(event.target.value);
+  };
 
-    const passwordChange = (event) => {
-        setPassword(event.target.value); // Atualiza o estado da senha com o valor do campo
-    };
+  const passwordChange = (event) => {
+    setPassword(event.target.value);
+  };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // Aqui você pode adicionar a lógica de autenticação, por exemplo, enviando os dados para um servidor
-        // e verificando se as credenciais são válidas.
-        // Por enquanto, apenas exibiremos os valores no console.
-        console.log('Usuario:', usuario);
-        console.log('Senha:', password);
-    };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Usuario:', usuario);
+    console.log('Senha:', password);
+  };
 
-    return (
-        <div>
+  const toggleCadastro = () => {
+    setShowCadastro(!showCadastro); // Alternar entre exibir e ocultar o formulário de cadastro
+  };
+
+  return (
+    <div>
       <h2>Login</h2>
 
-      <form className='viewlogin' onSubmit={handleSubmit}>
-        <div className='viewcontainer'>
-          <div className='usuario'>
-          <label id='usuario' htmlFor="usuario">Usuário:</label>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="usuario">Usuário:</label>
           <input
-            type="usuario"
+            type="text"
             id="usuario"
             value={usuario}
             onChange={usuarioChange}
             required
           />
         </div>
-        </div>
+
         <div>
-          <div className='senha'>
           <label htmlFor="password">Senha:</label>
           <input
             type="password"
@@ -50,12 +50,22 @@ const Login = () => {
             required
           />
         </div>
-        </div>
-        <button id="submit" type="submit">Entrar</button>
 
+        <button type="submit">Entrar</button>
+
+        {/* Adicione um link ou botão para alternar para o formulário de cadastro */}
+        <p>
+          Ainda não tem uma conta?{' '}
+          <button type="button" onClick={toggleCadastro}>
+            Cadastre-se
+          </button>
+        </p>
       </form>
+
+      {/* Exiba o formulário de cadastro se o estado showCadastro for true */}
+      {showCadastro && <Cadastro />}
     </div>
-    );
-}
+  );
+};
 
 export default Login;

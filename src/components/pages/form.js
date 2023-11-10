@@ -1,33 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import axios from 'axios';
 
-function NameForm() {
+const Cadastro = () => {
   const [formData, setFormData] = useState({
-    username: '',
-    user: '',
+    nome: '',
     senha: '',
   });
 
+  const [cadastroSucesso, setCadastroSucesso] = useState(false);
+
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
-      const response = await axios.post('http://localhost:3000/users', formData);
-      console.log('Usuário criado:', response.data);
-      
+      const response = await axios.post('http://localhost:3000/cadastro', formData);
+
+      if (response.status === 201) {
+        console.log('Cadastro realizado com sucesso!');
+        setCadastroSucesso(true); // Definir o estado como verdadeiro em caso de sucesso
+      } else {
+        console.error('Erro ao cadastrar cliente');
+      }
     } catch (error) {
-      console.error('Erro ao criar usuário:', error);
-      
-    }
+      console.error('Erro na solicitação:', error);
+      console.error('Detalhes do erro Axios:', error.response);
+    }; 
   };
+  useEffect(() => {
+    if (cadastroSucesso) {
+      window.location.reload();
+    }
+  }, [cadastroSucesso]);
 
   return (
     <div>
@@ -36,22 +46,12 @@ function NameForm() {
           Nome:
           <input
             type="text"
-            name="username"
-            value={formData.username}
+            name="nome"
+            value={formData.nome}
             onChange={handleInputChange}
           />
         </label>
         <br/>
-        <label>
-          User:
-          <input
-            type="text"
-            name="user"
-            value={formData.user}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
         <label>
           Senha:
           <input
@@ -63,9 +63,12 @@ function NameForm() {
         </label>
         <br />
         <input type="submit" id="enviar" value="Enviar" />
+        {cadastroSucesso && (
+        <span id='cadastrowin'>Cadastro realizado com sucesso!</span>
+      )}
       </form>
     </div>
   );
-}
+};
 
-export default NameForm;
+export default Cadastro;
