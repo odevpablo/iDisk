@@ -20,7 +20,7 @@ const Cadastro = () => {
     e.preventDefault();
   
     try {
-      const response = await axios.post('http://localhost:3000/cadastro', formData);
+      const response = await axios.post('https://odevpablo.github.io/apinode/cadastro', formData);
 
       if (response.status === 201) {
         console.log('Cadastro realizado com sucesso!');
