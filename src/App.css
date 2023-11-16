@@ -96,10 +96,10 @@
 }
 @keyframes slide-top {
   0% {
-    transform: translateY(100%); /* Inicia fora da tela, abaixo */
+    transform: translateY(100%); 
   }
   100% {
-    transform: translateY(0); /* Desliza para o topo */
+    transform: translateY(0); 
   }
 }
 
